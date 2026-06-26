@@ -1,2 +1,12 @@
 category,file_path,name,author,license,spdx,source_url,used_for,date_added
 engine,/,Godot Engine 4.7,"Juan Linietsky, Ariel Manzur & contributors",MIT,MIT,https://godotengine.org,Game engine,2026-06-26
+code,addons/dialogue_manager/,Dialogue Manager v3.9.1,Nathan Hoad,MIT,MIT,https://github.com/nathanhoad/godot_dialogue_manager,NPC dialogue & branching/quest logic,2026-06-26
+art-tileset,art/tilesets/urban_tilemap.png,RPG Urban Pack tilemap,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,World/town tileset (486 tiles),2026-06-26
+art-character,art/characters/char_00.png,RPG Urban character 0,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,NPC sprite (green shirt),2026-06-26
+art-character,art/characters/char_01.png,RPG Urban character 1,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,Player hero sprite,2026-06-26
+art-character,art/characters/char_02.png,RPG Urban character 2,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,NPC sprite,2026-06-26
+art-character,art/characters/char_03.png,RPG Urban character 3,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,NPC sprite,2026-06-26
+art-character,art/characters/char_04.png,RPG Urban character 4,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,NPC sprite,2026-06-26
+art-character,art/characters/char_05.png,RPG Urban character 5,Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/rpg-urban-pack,NPC sprite,2026-06-26
+art-ui,art/ui/dpad_*.png,Mobile Controls D-pad (Style A),Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/mobile-controls,On-screen touch D-pad,2026-06-26
+art-ui,art/ui/button_circle.png,Mobile Controls button (Style A),Kenney,CC0-1.0,CC0-1.0,https://kenney.nl/assets/mobile-controls,On-screen A/B touch buttons,2026-06-26

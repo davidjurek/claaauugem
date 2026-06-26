@@ -1,5 +1,10 @@
 ; Engine configuration file.
-; Godot 4.7 — PSYCHO SUBURBIA
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
 
@@ -7,10 +12,16 @@ config_version=5
 
 config/name="PSYCHO SUBURBIA"
 config/description="A modern-day quirky RPG inspired by EarthBound."
-run/main_scene="res://scenes/ui/Boot.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 boot_splash/show_image=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+DevTools="*res://scripts/autoload/DevTools.gd"
+GameState="*res://scripts/autoload/GameState.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -21,12 +32,20 @@ window/size/window_height_override=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation="landscape"
-window/vsync/vsync_mode=1
 
-[input_devices]
+[editor_plugins]
 
-pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=true
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://art/": "blue",
+"res://audio/": "purple",
+"res://data/": "green",
+"res://scenes/": "orange",
+"res://scripts/": "yellow"
+}
 
 [input]
 
@@ -72,19 +91,17 @@ menu={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://data/dialogue/town.dialogue", "res://data/dialogue/system.dialogue")
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.05, 0.05, 0.08, 1)
-
-[file_customization]
-
-folder_colors={
-"res://art/": "blue",
-"res://audio/": "purple",
-"res://data/": "green",
-"res://scenes/": "orange",
-"res://scripts/": "yellow"
-}

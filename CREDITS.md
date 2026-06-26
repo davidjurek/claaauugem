@@ -26,25 +26,25 @@ believe your work is miscredited, please open an issue.
 
 | Component | Author | License | Used for | Source |
 |-----------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| Dialogue Manager (v3.9.1) | Nathan Hoad | MIT | NPC dialogue, branching conversations, quest-flag logic | https://github.com/nathanhoad/godot_dialogue_manager |
 
 ## Art — Tilesets & Environments
 
 | Asset | Author | License | Used for | Source |
 |-------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| RPG Urban Pack (1.0) | Kenney | CC0-1.0 | Town/world tileset: roads, buildings, cars, trees, street furniture, interiors | https://kenney.nl/assets/rpg-urban-pack |
 
 ## Art — Characters & Sprites
 
 | Asset | Author | License | Used for | Source |
 |-------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| RPG Urban Pack characters (1.0) | Kenney | CC0-1.0 | Player + NPC sprites (6 characters, 4-direction 3-frame walk) | https://kenney.nl/assets/rpg-urban-pack |
 
 ## Art — UI & Icons
 
 | Asset | Author | License | Used for | Source |
 |-------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| Mobile Controls (Style A) | Kenney | CC0-1.0 | On-screen virtual D-pad + A/B touch buttons | https://kenney.nl/assets/mobile-controls |
 
 ## Audio — Music
 

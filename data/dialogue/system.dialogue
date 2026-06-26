@@ -1,0 +1,14 @@
+~ phone
+Pay Phone: *briiiing* You pick up the receiver. It's warm.
+Mom: Hi sweetie! You sound far away. Want me to write down where you are, in case you faint again?
+- Yes, save my progress => do_save
+- Not right now => hangup
+
+~ do_save
+do GameState.save_game()
+Mom: Got it, scribbled on the fridge. Be safe out there! And eat a vegetable.
+=> END
+
+~ hangup
+Mom: Okay. ...You never call, you know. Bye-bye!
+=> END

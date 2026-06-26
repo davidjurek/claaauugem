@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0pssave01"]
+
+[ext_resource type="Script" path="res://scripts/SavePoint.gd" id="1_save"]
+[ext_resource type="Texture2D" path="res://art/tilesets/urban_tilemap.png" id="2_tiles"]
+
+[sub_resource type="AtlasTexture" id="AtlasPhone"]
+atlas = ExtResource("2_tiles")
+region = Rect2(144, 192, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectBody"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="RectTalk"]
+size = Vector2(16, 16)
+
+[node name="SavePoint" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_save")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = SubResource("AtlasPhone")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectBody")
+
+[node name="Interact" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+shape = SubResource("RectTalk")

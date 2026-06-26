@@ -1,0 +1,119 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0pstouch01"]
+
+[ext_resource type="Script" path="res://scripts/TouchControls.gd" id="1_tc"]
+[ext_resource type="Texture2D" path="res://art/ui/dpad_base.png" id="2_dpad"]
+[ext_resource type="Texture2D" path="res://art/ui/button_circle.png" id="3_btn"]
+
+[node name="TouchControls" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_tc")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="DPad" type="TextureRect" parent="Root"]
+modulate = Color(1, 1, 1, 0.82)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -106.0
+offset_right = 106.0
+offset_bottom = -10.0
+mouse_filter = 2
+texture = ExtResource("2_dpad")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ButtonA" type="TextureRect" parent="Root"]
+modulate = Color(0.6, 1, 0.65, 0.9)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -76.0
+offset_right = -16.0
+offset_bottom = -28.0
+mouse_filter = 2
+texture = ExtResource("3_btn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelA" type="Label" parent="Root/ButtonA"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 5.0
+offset_bottom = 9.0
+text = "A"
+
+[node name="ButtonB" type="TextureRect" parent="Root"]
+modulate = Color(1, 0.7, 0.7, 0.9)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -58.0
+offset_right = -74.0
+offset_bottom = -18.0
+mouse_filter = 2
+texture = ExtResource("3_btn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelB" type="Label" parent="Root/ButtonB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 5.0
+offset_bottom = 9.0
+text = "B"
+
+[node name="ButtonMenu" type="TextureRect" parent="Root"]
+modulate = Color(0.85, 0.85, 1, 0.85)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_btn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelMenu" type="Label" parent="Root/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 7.0
+text = "≡"
