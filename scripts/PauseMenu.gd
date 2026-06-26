@@ -79,6 +79,7 @@ func _use_item(iid: String) -> void:
 		"cure":
 			pass
 	GameState.inventory.erase(iid)
+	AudioManager.sfx("heal")
 	_refresh_stats()
 	_show_goods()
 
@@ -90,9 +91,9 @@ func _highlight() -> void:
 
 func _unhandled_input(e: InputEvent) -> void:
 	if e.is_action_pressed("move_down"):
-		_index = (_index + 1) % _buttons.size(); _highlight(); get_viewport().set_input_as_handled()
+		_index = (_index + 1) % _buttons.size(); _highlight(); AudioManager.sfx("cursor"); get_viewport().set_input_as_handled()
 	elif e.is_action_pressed("move_up"):
-		_index = (_index - 1 + _buttons.size()) % _buttons.size(); _highlight(); get_viewport().set_input_as_handled()
+		_index = (_index - 1 + _buttons.size()) % _buttons.size(); _highlight(); AudioManager.sfx("cursor"); get_viewport().set_input_as_handled()
 	elif e.is_action_pressed("interact"):
 		_buttons[_index].emit_signal("pressed"); get_viewport().set_input_as_handled()
 	elif e.is_action_pressed("cancel") or e.is_action_pressed("menu"):

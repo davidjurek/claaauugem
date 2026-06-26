@@ -49,6 +49,10 @@ func stop_bgm() -> void:
 	_music.stop()
 	_music_b.stop()
 
+## Convenience: AudioManager.sfx("hit") plays res://audio/sfx/hit.ogg
+func sfx(name: String, pitch := 1.0) -> void:
+	play_sfx("res://audio/sfx/%s.ogg" % name, pitch)
+
 func play_sfx(path: String, pitch := 1.0) -> void:
 	if not ResourceLoader.exists(path):
 		return

@@ -54,16 +54,18 @@ func _buy(iid: String) -> void:
 	if GameState.money >= price:
 		GameState.add_money(-price)
 		GameState.add_item(iid)
+		AudioManager.sfx("buy")
 		info.text = "Bought %s!" % ItemDB.name_of(iid)
 	else:
+		AudioManager.sfx("cancel")
 		info.text = "Not enough money."
 	_refresh()
 
 func _unhandled_input(e: InputEvent) -> void:
 	if e.is_action_pressed("move_down"):
-		_index = (_index + 1) % _buttons.size(); _refresh(); get_viewport().set_input_as_handled()
+		_index = (_index + 1) % _buttons.size(); _refresh(); AudioManager.sfx("cursor"); get_viewport().set_input_as_handled()
 	elif e.is_action_pressed("move_up"):
-		_index = (_index - 1 + _buttons.size()) % _buttons.size(); _refresh(); get_viewport().set_input_as_handled()
+		_index = (_index - 1 + _buttons.size()) % _buttons.size(); _refresh(); AudioManager.sfx("cursor"); get_viewport().set_input_as_handled()
 	elif e.is_action_pressed("interact"):
 		_buttons[_index].emit_signal("pressed"); get_viewport().set_input_as_handled()
 	elif e.is_action_pressed("cancel") or e.is_action_pressed("menu"):

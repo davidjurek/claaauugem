@@ -57,7 +57,7 @@ believe your work is miscredited, please open an issue.
 
 | Asset | Author | License | Used for | Source |
 |-------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| Interface Sounds | Kenney | CC0-1.0 | Menu cursor/confirm/cancel, battle hits, heal, buy SFX | https://kenney.nl/assets/interface-sounds |
 
 ## Fonts
 

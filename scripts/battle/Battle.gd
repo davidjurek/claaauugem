@@ -296,12 +296,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not _menu_active or _menu.is_empty():
 		return
 	if event.is_action_pressed("move_down"):
-		_menu_index = (_menu_index + 1) % _menu.size(); _highlight()
+		_menu_index = (_menu_index + 1) % _menu.size(); _highlight(); AudioManager.sfx("cursor")
 	elif event.is_action_pressed("move_up"):
-		_menu_index = (_menu_index - 1 + _menu.size()) % _menu.size(); _highlight()
+		_menu_index = (_menu_index - 1 + _menu.size()) % _menu.size(); _highlight(); AudioManager.sfx("cursor")
 	elif event.is_action_pressed("interact"):
+		AudioManager.sfx("confirm")
 		_menu[_menu_index].emit_signal("pressed")
 	elif event.is_action_pressed("cancel"):
+		AudioManager.sfx("cancel")
 		_menu_cancel_now()
 
 func _clear_menu() -> void:
@@ -422,6 +424,7 @@ func _do_attack(a: Battler, t: Battler) -> void:
 	if t.has_status("guard"): base = int(base * 0.5)
 	if crit: base *= 2
 	var dmg: int = t.take_damage(base)
+	AudioManager.sfx("hit", randf_range(0.92, 1.08))
 	await say("%s%s hit %s for %d!" % [a.display_name, " SMASH" if crit else "", t.display_name, dmg], 0.85)
 
 func _do_psi(a: Battler, pid: String, target) -> void:
@@ -444,6 +447,7 @@ func _do_psi(a: Battler, pid: String, target) -> void:
 		"heal":
 			var t: Battler = target if target != null else a
 			var amt: int = t.heal(d.power + randi_range(-2, 4))
+			AudioManager.sfx("heal")
 			await say("%s recovered %d HP." % [t.display_name, amt], 0.7)
 		"buff":
 			var t2: Battler = target if target != null else a
