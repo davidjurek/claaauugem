@@ -62,11 +62,18 @@ func build_map() -> void:
 	var phone := SAVE_SCENE.instantiate()
 	add_actor(phone, 18, 18)
 
-	add_border_walls()
+	# a little path to the east park gate
+	fill(ground, 40, 17, 4, 2, Tiles.CONCRETE)
+	add_prop(Rect2i(Tiles.SIGN, Vector2i(1, 1)), 41, 16, false)
 
-	# 9. spawn points
+	add_border_walls()
+	clear_solid(44, 17); clear_solid(44, 18)
+
+	# 9. exits & spawn points
+	add_portal("res://scenes/world/MaplePark.tscn", "from_town", 43, 18)
 	set_spawn("default", 22, 23)
 	set_spawn("from_north", 21, 13)
+	set_spawn("from_park", 41, 18)
 
 func _npc(idx: int, title: String, tx: int, ty: int, face: String) -> void:
 	var npc := NPC_SCENE.instantiate()

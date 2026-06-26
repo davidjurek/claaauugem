@@ -15,6 +15,7 @@ var solids: Dictionary = {}          # Vector2i -> true
 var map_w: int = 0
 var map_h: int = 0
 var spawn_points: Dictionary = {}    # name -> Vector2 (world px)
+var music_path: String = "res://audio/bgm/town.ogg"   # worlds override
 
 func _ready() -> void:
 	ground.tile_set = UrbanTileSet.get_tileset()
@@ -71,6 +72,28 @@ func add_prop(atlas_rect: Rect2i, base_tx: int, base_ty: int, solid_base := true
 func add_actor(node: Node2D, tx: int, ty: int) -> void:
 	node.position = tile_to_world(tx, ty)
 	entities.add_child(node)
+
+const PORTAL_SCENE := preload("res://scenes/world/Portal.tscn")
+
+func add_portal(target_scene: String, target_spawn: String, tx: int, ty: int, opts := {}) -> void:
+	var p := PORTAL_SCENE.instantiate()
+	p.target_scene = target_scene
+	p.target_spawn = target_spawn
+	p.require_flag = opts.get("flag", "")
+	p.position = tile_to_world(tx, ty)
+	add_child(p)
+
+const ENEMY_SCENE := preload("res://scenes/world/OverworldEnemy.tscn")
+
+func add_enemy(troop: Array, sprite: String, tx: int, ty: int, opts := {}) -> void:
+	var e := ENEMY_SCENE.instantiate()
+	e.troop = troop
+	e.sprite_name = sprite
+	e.boss = opts.get("boss", false)
+	e.chase = opts.get("chase", true)
+	e.move_speed = opts.get("speed", 20.0)
+	e.home_flag = opts.get("flag", "")
+	add_actor(e, tx, ty)
 
 func set_spawn(name: String, tx: int, ty: int) -> void:
 	spawn_points[name] = tile_to_world(tx, ty)

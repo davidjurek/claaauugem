@@ -39,6 +39,7 @@ believe your work is miscredited, please open an issue.
 | Asset | Author | License | Used for | Source |
 |-------|--------|---------|----------|--------|
 | RPG Urban Pack characters (1.0) | Kenney | CC0-1.0 | Player + NPC sprites (6 characters, 4-direction 3-frame walk) | https://kenney.nl/assets/rpg-urban-pack |
+| RPG Enemy/Critter sprites | Stephen Challener (Redshrike), hosted at OpenGameArt.org | CC-BY 3.0 / OGA-BY 3.0 | Battle enemy sprites (slimes, skeleton, goblin, skull, golem, mushroom, mimic), reskinned as "static-infected" suburb foes | https://opengameart.org/content/16x16-16x24-32x32-rpg-enemies-updated |
 
 ## Art — UI & Icons
 
@@ -50,7 +51,7 @@ believe your work is miscredited, please open an issue.
 
 | Track | Author | License | Used for | Source |
 |-------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| 15 Melodic RPG Chiptunes (Title, Town, Dungeon, Rainy Streets, Bittersweet Story, Shrine of Mysteries, Fountain of the Fairies, Battle 1, Battle 2, The Evil One, Game Over) | Aureolus_Omicron | CC0-1.0 | Area/battle/boss/title/game-over music | https://opengameart.org/content/15-melodic-rpg-chiptunes |
 
 ## Audio — Sound Effects
 

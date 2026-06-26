@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0psbattle01"]
+
+[ext_resource type="Script" path="res://scripts/battle/Battle.gd" id="1_battle"]
+
+[node name="Battle" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_battle")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BG" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.03, 0.02, 0.07, 1)
+
+[node name="EnemyRow" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 96.0
+alignment = 1
+theme_override_constants/separation = 14
+
+[node name="MsgPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = -10.0
+offset_bottom = 124.0
+
+[node name="Msg" type="Label" parent="Root/MsgPanel"]
+layout_mode = 2
+text = ""
+vertical_alignment = 1
+
+[node name="MenuRoot" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="StatusRow" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_bottom = -6.0
+alignment = 1
+theme_override_constants/separation = 6

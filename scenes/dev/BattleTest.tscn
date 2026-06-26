@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0psbattletest"]
+
+[ext_resource type="Script" path="res://scenes/dev/BattleTest.gd" id="1_bt"]
+
+[node name="BattleTest" type="Node"]
+script = ExtResource("1_bt")

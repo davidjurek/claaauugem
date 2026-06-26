@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0psowenemy01"]
+
+[ext_resource type="Script" path="res://scripts/OverworldEnemy.gd" id="1_oe"]
+
+[sub_resource type="RectangleShape2D" id="RectBody"]
+size = Vector2(10, 8)
+
+[node name="OverworldEnemy" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_oe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectBody")

@@ -8,6 +8,9 @@ func _ready() -> void:
 	if args.has("--smoketest"):
 		_smoketest(args)
 		return
+	if args.has("--owbattle"):
+		_owbattle(args)
+		return
 	var d := args.find("--dialogue")
 	if d != -1 and d + 2 < args.size():
 		_show_dialogue_then_shot(args[d + 1], args[d + 2], args)
@@ -53,6 +56,27 @@ func _smoketest(args: PackedStringArray) -> void:
 
 func _finish_smoke(args: PackedStringArray, ok: bool) -> void:
 	print("[SMOKE] RESULT: ", "PASS" if ok else "FAIL")
+	var i := args.find("--shot")
+	if i != -1 and i + 1 < args.size():
+		await _capture_after(args[i + 1], 0.3)
+	else:
+		get_tree().quit(0 if ok else 1)
+
+func _owbattle(args: PackedStringArray) -> void:
+	await get_tree().create_timer(0.6).timeout
+	var main := get_tree().current_scene
+	main.change_world(load("res://scenes/world/MaplePark.tscn"), "default")
+	await get_tree().process_frame
+	await get_tree().process_frame
+	var enemy = get_tree().get_first_node_in_group("overworld_enemy")
+	var player = get_tree().get_first_node_in_group("player")
+	print("[OWBATTLE] enemy=", enemy, " player=", player)
+	if enemy and player:
+		player.global_position = enemy.global_position
+	await get_tree().create_timer(1.6).timeout
+	var battle = get_tree().get_first_node_in_group("battle")
+	var ok: bool = main.get("in_battle") and battle != null
+	print("[OWBATTLE] in_battle=", main.get("in_battle"), " battle=", battle, " RESULT=", "PASS" if ok else "FAIL")
 	var i := args.find("--shot")
 	if i != -1 and i + 1 < args.size():
 		await _capture_after(args[i + 1], 0.3)

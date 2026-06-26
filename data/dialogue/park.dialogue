@@ -1,0 +1,30 @@
+~ catlady
+if GameState.get_flag("cat_found")
+	Marigold: You found Mr. Whiskers! Oh, you wonderful child. Here — take this. My late husband swore by it.
+	do GameState.add_item("cola")
+	do GameState.set_flag("cat_quest_done", true)
+	Marigold: Now shoo. Go save the world or whatever it is you're doing.
+	=> END
+elif GameState.get_flag("cat_quest")
+	Marigold: Still no sign of my Mr. Whiskers? He's an orange tabby. Bad attitude. You'll know him.
+	=> END
+else
+	Marigold: Excuse me — you there. You look like someone who steps on things.
+	Marigold: My cat, Mr. Whiskers, bolted when the sky flashed. He's somewhere in this park, I just know it.
+	- I'll find him => accept
+	- Not my problem => decline
+
+~ accept
+do GameState.set_flag("cat_quest", true)
+Marigold: Bless you. He answers to "Mr. Whiskers," and to absolutely no one.
+=> END
+
+~ decline
+Marigold: ...Kids these days. No sense of duty. Off you go, then.
+=> END
+
+~ cat
+The Cat: mrrrow?
+The Cat: (It's Mr. Whiskers. He blinks at you, unimpressed, then trots off toward Marigold.)
+do GameState.set_flag("cat_found", true)
+=> END
