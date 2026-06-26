@@ -1,7 +1,7 @@
 extends Control
 ## Scrolling credits. Auto-scrolls; tap or press B to return to the title.
 
-const TEXT := """PSYCHO SUBURBIA
+const TEXT := """STATIC FALLS
 a quiet weird little town
 
 
@@ -51,7 +51,7 @@ Story, design & code glue
 built for this game.
 
 
-PSYCHO SUBURBIA
+STATIC FALLS
 2026
 
 

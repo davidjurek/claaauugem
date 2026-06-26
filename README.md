@@ -1,4 +1,4 @@
-# PSYCHO SUBURBIA
+# Static Falls
 
 A modern-day quirky RPG for iOS, built in **Godot 4** and inspired by *EarthBound* —
 a psychic kid, a weird suburb, and the mundane bleeding into the surreal.

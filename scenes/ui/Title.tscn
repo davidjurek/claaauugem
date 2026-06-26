@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0pstitle01"]
+[gd_scene load_steps=3 format=3 uid="uid://b0pstitle01"]
 
 [ext_resource type="Script" path="res://scripts/Title.gd" id="1_title"]
+[ext_resource type="FontFile" path="res://fonts/PressStart2P.ttf" id="2_pstart"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -41,9 +42,10 @@ alignment = 1
 
 [node name="TitleText" type="Label" parent="Center"]
 layout_mode = 2
-text = "PSYCHO SUBURBIA"
+theme_override_fonts/font = ExtResource("2_pstart")
+text = "STATIC FALLS"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 22
 
 [node name="Subtitle" type="Label" parent="Center"]
 modulate = Color(0.48, 0.88, 1, 1)

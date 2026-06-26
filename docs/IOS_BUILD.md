@@ -1,4 +1,4 @@
-# Building PSYCHO SUBURBIA for iPhone
+# Building Static Falls for iPhone
 
 The game runs on a real iPhone via Godot's iOS export + Xcode signing.
 

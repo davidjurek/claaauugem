@@ -6,7 +6,7 @@ extends Control
 @onready var status_label: Label = $Center/VBox/Status
 
 func _ready() -> void:
-	print("[BOOT] PSYCHO SUBURBIA booting...")
+	print("[BOOT] STATIC FALLS booting...")
 	print("[BOOT] Godot ", Engine.get_version_info().string)
 	print("[BOOT] Viewport ", get_viewport().get_visible_rect().size)
 	if status_label:

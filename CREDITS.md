@@ -1,6 +1,6 @@
 # Credits & Attributions
 
-**PSYCHO SUBURBIA** is built almost entirely from open-source and freely-licensed
+**Static Falls** is built almost entirely from open-source and freely-licensed
 work created by other people. This file credits every third-party component, asset,
 and tool used. Original game code, story, and data are MIT-licensed (see `LICENSE`).
 
@@ -63,7 +63,8 @@ believe your work is miscredited, please open an issue.
 
 | Font | Author | License | Used for | Source |
 |------|--------|---------|----------|--------|
-| _(pending)_ | | | | |
+| Pixelify Sans | The Pixelify Sans Project Authors | OFL-1.1 | Default UI / dialogue / body text | https://fonts.google.com/specimen/Pixelify+Sans |
+| Press Start 2P | CodeMan38 (The Press Start 2P Project Authors) | OFL-1.1 | Title / headers | https://fonts.google.com/specimen/Press+Start+2P |
 
 ---
 
