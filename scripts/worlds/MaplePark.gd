@@ -43,6 +43,14 @@ func build_map() -> void:
 	npc.facing = "down"
 	add_actor(npc, 4, 16)
 
+	# Mr. Whiskers, hiding in a bush (invisible interact spot)
+	add_prop(Rect2i(Tiles.BUSH, Vector2i(1, 1)), 33, 8, false)
+	var cat := preload("res://scenes/world/NPC.tscn").instantiate()
+	cat.character_index = -1
+	cat.dialogue_path = "res://data/dialogue/park.dialogue"
+	cat.dialogue_title = "cat"
+	add_actor(cat, 33, 8)
+
 	add_border_walls()
 	# leave gaps for the exits
 	clear_solid(-1, 14); clear_solid(-1, 15)

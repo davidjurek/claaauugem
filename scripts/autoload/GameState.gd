@@ -49,6 +49,10 @@ func add_money(amount: int) -> void:
 	money = max(0, money + amount)
 	money_changed.emit(money)
 
+func add_to_party(ally_id: String) -> void:
+	if not party.has(ally_id):
+		party.append(ally_id)
+
 func has_item(item_id: String) -> bool:
 	return inventory.has(item_id)
 

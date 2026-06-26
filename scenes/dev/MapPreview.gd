@@ -5,6 +5,10 @@ extends Node2D
 @export var world_scene: PackedScene = preload("res://scenes/world/TownSquare.tscn")
 
 func _ready() -> void:
+	var args := OS.get_cmdline_user_args()
+	var wi := args.find("--world")
+	if wi != -1 and wi + 1 < args.size():
+		world_scene = load(args[wi + 1])
 	var w: GameWorld = world_scene.instantiate()
 	add_child(w)
 	var cam := Camera2D.new()

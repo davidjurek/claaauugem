@@ -59,7 +59,7 @@ func _trigger() -> void:
 	_busy = true
 	var result: String = await main.start_battle(troop, boss)
 	if result == "win":
-		if boss and home_flag != "":
+		if home_flag != "":
 			GameState.set_flag(home_flag, true)
 		queue_free()
 	else:

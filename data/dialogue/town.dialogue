@@ -1,12 +1,26 @@
 ~ pidge
-Pidge: Oh! You're up. You blacked out the second that flash hit last night.
-Pidge: The whole sky went white. And then every TV in Static Falls started... whispering.
-Pidge: You hear it too, right? Tell me you hear it too.
-=> END
+if GameState.get_flag("static_cleared")
+	Pidge: You did it. The TVs are just TVs again. Mom cried. It was a whole thing.
+	Pidge: ...Thanks, {{GameState.hero_name}}. For not fainting when it mattered.
+	=> END
+elif GameState.get_flag("intro_done")
+	Pidge: The static's getting worse — I can hear it humming from here.
+	Pidge: The old broadcast tower on the hill. That's where the flash came from. I'd bet my bike on it.
+	Pidge: We should follow it: the park to the east, then the underpass, then up through the woods.
+	=> END
+else
+	Pidge: {{GameState.hero_name}}! You're finally up. You've been out cold since the flash last night.
+	Pidge: The whole sky went white. And now every TV in Static Falls is... whispering. Mine said my name.
+	Pidge: Something crawled out of the Henderson's television this morning. I am NOT exaggerating.
+	Pidge: I'm coming with you. Don't argue — you faint when you stand up too fast.
+	do GameState.add_to_party("pidge")
+	do GameState.set_flag("intro_done", true)
+	Pidge: Start at the park, just east of here. That's where folks saw the first... things.
+	=> END
 
 ~ gus
-Gus: I run the drugstore. Or I would, if the front door would quit HUMMING.
-Gus: Put your ear against the bricks sometime. That's not normal masonry, kid.
+Gus: I run the drugstore — the red building. Stocked up on sodas and bandages, since, y'know. Apocalypse.
+Gus: Press your ear to my front door sometime. That humming? That's not normal masonry, kid.
 => END
 
 ~ edna
@@ -16,5 +30,5 @@ Edna: Mind the puddle by the pond. It's been... staring back lately.
 
 ~ kid
 Static Falls Kid: My dad says the flash was just heat lightning.
-Static Falls Kid: My dad also talks to the toaster now. So.
+Static Falls Kid: My dad also talks to the toaster now. He calls it "Brad." So.
 => END

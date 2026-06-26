@@ -1,0 +1,12 @@
+~ ending
+MR. STATIC: ...y o u   c a n   h e a r   m e ...   e v e r y o n e   c a n   h e a r   m e ...
+{{GameState.hero_name}}: Yeah. We heard you. The whole town did.
+{{GameState.hero_name}}: You're not a broadcast. You're just lonely. Loud, and lonely.
+Pidge: ...{{GameState.hero_name}}. It's powering down. The hum — it's gone.
+MR. STATIC: t h a n k   y o u   f o r   l i s t e n i n g . . .
+Pidge: Look. Out over the rooftops. The TVs in every house — they all just... turned themselves off.
+Pidge: It's so quiet. I forgot what quiet sounded like.
+Pidge: C'mon. Mom's probably made too much food. Let's go home, {{GameState.hero_name}}.
+Narrator: And so the static lifted from Static Falls, and it was, once again, a nice place to lie down.
+Narrator: ~ THE END ~
+=> END

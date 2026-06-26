@@ -49,6 +49,11 @@ func solid(tx: int, ty: int) -> void:
 func clear_solid(tx: int, ty: int) -> void:
 	solids.erase(Vector2i(tx, ty))
 
+## Remove a tile + its collision (e.g. to cut a doorway through a wall).
+func carve(layer: TileMapLayer, tx: int, ty: int) -> void:
+	layer.erase_cell(Vector2i(tx, ty))
+	solids.erase(Vector2i(tx, ty))
+
 ## Place a multi-tile prop (e.g. a tree) as a single y-sorted sprite whose
 ## origin sits at its base so it sorts correctly against the player.
 func add_prop(atlas_rect: Rect2i, base_tx: int, base_ty: int, solid_base := true) -> Sprite2D:
@@ -82,6 +87,15 @@ func add_portal(target_scene: String, target_spawn: String, tx: int, ty: int, op
 	p.require_flag = opts.get("flag", "")
 	p.position = tile_to_world(tx, ty)
 	add_child(p)
+
+const PICKUP_SCENE := preload("res://scenes/world/Pickup.tscn")
+
+func add_pickup(item_id: String, tx: int, ty: int, flag := "", atlas := Vector2i(8, 11)) -> void:
+	var p := PICKUP_SCENE.instantiate()
+	p.item_id = item_id
+	p.flag = flag
+	p.atlas = atlas
+	add_actor(p, tx, ty)
 
 const ENEMY_SCENE := preload("res://scenes/world/OverworldEnemy.tscn")
 

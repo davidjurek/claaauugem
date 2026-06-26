@@ -15,9 +15,12 @@ extends CharacterBody2D
 var _busy := false
 
 func _ready() -> void:
-	var tex: Texture2D = load("res://art/characters/char_%02d.png" % character_index)
-	sprite.sprite_frames = CharacterFactory.build(tex)
-	sprite.play("idle_" + facing)
+	if character_index < 0:
+		sprite.visible = false        # invisible dialogue spot (e.g. a rustling bush)
+	else:
+		var tex: Texture2D = load("res://art/characters/char_%02d.png" % character_index)
+		sprite.sprite_frames = CharacterFactory.build(tex)
+		sprite.play("idle_" + facing)
 	add_to_group("npc")
 
 func interact(player: Player) -> void:
@@ -29,7 +32,8 @@ func interact(player: Player) -> void:
 		facing = "right" if to_player.x > 0 else "left"
 	else:
 		facing = "down" if to_player.y > 0 else "up"
-	sprite.play("idle_" + facing)
+	if sprite.visible:
+		sprite.play("idle_" + facing)
 
 	_busy = true
 	player.set_movement_locked(true)

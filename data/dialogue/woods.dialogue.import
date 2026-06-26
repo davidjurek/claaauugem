@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://rofw1pmwoxkf"
+path="res://.godot/imported/woods.dialogue-5d413fea33f5edd5d985f8b4dd6836f8.tres"
+
+[deps]
+
+source_file="res://data/dialogue/woods.dialogue"
+dest_files=["res://.godot/imported/woods.dialogue-5d413fea33f5edd5d985f8b4dd6836f8.tres"]
+
+[params]
+
+defaults=true

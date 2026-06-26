@@ -1,0 +1,12 @@
+~ hermit
+if GameState.get_flag("static_cleared")
+	Hermit Stan: You hear that? Birds. Real ones. Haven't heard 'em since the flash. ...You did good, kid.
+	=> END
+elif GameState.get_flag("has_tower_key")
+	Hermit Stan: Got the rooftop key off that mailbox, huh? Brave. Or stupid. At your age it's the same thing.
+	Hermit Stan: That thing up top — it's not a broadcast. It's a thing that LEARNED to broadcast. Hit it where it screams.
+	=> END
+else
+	Hermit Stan: I live out here so the TVs can't find me. You think I'm crazy. The toaster thinks I'm crazy too.
+	Hermit Stan: There's a key on the old mailbox to the west. Opens the tower door. ...You'll want a soda first. Trust me.
+	=> END

@@ -14,7 +14,9 @@ var touch: CanvasLayer
 var in_battle := false
 
 func _ready() -> void:
-	change_world(start_world, "default")
+	var ws: String = GameState.current_world
+	var scene: PackedScene = load(ws) if ResourceLoader.exists(ws) else start_world
+	change_world(scene, GameState.current_spawn)
 	touch = TOUCH_SCENE.instantiate()
 	add_child(touch)
 
@@ -49,11 +51,24 @@ func start_battle(enemy_ids: Array, boss := false) -> String:
 	in_battle = false
 	if result == "lose":
 		await _handle_defeat()
+	elif GameState.get_flag("static_cleared") and not GameState.get_flag("ending_played"):
+		await _play_ending()
 	else:
 		AudioManager.play_bgm(world.music_path, true)
 		if player:
 			player.set_movement_locked(false)
 	return result
+
+func _play_ending() -> void:
+	GameState.set_flag("ending_played", true)
+	AudioManager.play_bgm("res://audio/bgm/story.ogg", true)
+	if player:
+		player.set_movement_locked(true)
+	var res: DialogueResource = load("res://data/dialogue/ending.dialogue")
+	var balloon := DialogueManager.show_example_dialogue_balloon(res, "ending")
+	await balloon.tree_exited
+	GameState.save_game()
+	get_tree().change_scene_to_file("res://scenes/ui/Credits.tscn")
 
 func _flash() -> void:
 	var fl := ColorRect.new()

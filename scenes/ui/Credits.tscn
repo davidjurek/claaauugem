@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0pscredits01"]
+
+[ext_resource type="Script" path="res://scripts/Credits.gd" id="1_cr"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_cr")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.03, 0.1, 1)
+
+[node name="Scroller" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1400.0
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 11
+
+[node name="Hint" type="Label" parent="."]
+modulate = Color(0.6, 0.6, 0.7, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -20.0
+offset_right = -6.0
+offset_bottom = -4.0
+text = "tap to skip"
+theme_override_font_sizes/font_size = 8
