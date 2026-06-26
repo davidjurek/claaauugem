@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0psychosub01"]
+
+[ext_resource type="Script" path="res://scripts/Boot.gd" id="1_boot"]
+
+[node name="Boot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_boot")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0784314, 0.0509804, 0.156863, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "PSYCHO SUBURBIA"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+
+[node name="Subtitle" type="Label" parent="Center/VBox"]
+modulate = Color(0.482353, 0.878431, 1, 1)
+layout_mode = 2
+text = "a quiet weird little town"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="Center/VBox"]
+modulate = Color(1, 0.419608, 0.615686, 1)
+layout_mode = 2
+text = "booting..."
+horizontal_alignment = 1
