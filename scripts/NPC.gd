@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export_file("*.dialogue") var dialogue_path: String
 @export var dialogue_title: String = "start"
 @export var wander: bool = false
+@export var shop_stock: Array = []      # if set, opens a shop after dialogue
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -40,5 +41,10 @@ func interact(player: Player) -> void:
 	var res: DialogueResource = load(dialogue_path)
 	var balloon := DialogueManager.show_example_dialogue_balloon(res, dialogue_title)
 	await balloon.tree_exited
+	if not shop_stock.is_empty():
+		var shop = preload("res://scenes/ui/Shop.tscn").instantiate()
+		shop.stock = shop_stock
+		get_tree().current_scene.add_child(shop)
+		await shop.closed
 	player.set_movement_locked(false)
 	_busy = false

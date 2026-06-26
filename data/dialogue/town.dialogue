@@ -23,6 +23,10 @@ Gus: I run the drugstore — the red building. Stocked up on sodas and bandages,
 Gus: Press your ear to my front door sometime. That humming? That's not normal masonry, kid.
 => END
 
+~ shop
+Gus: Welcome to the drugstore! Best prices in Static Falls. Only prices, really. Take a look.
+=> END
+
 ~ edna
 Edna: At my age, dear, a little apocalypse is almost something to look forward to.
 Edna: Mind the puddle by the pond. It's been... staring back lately.

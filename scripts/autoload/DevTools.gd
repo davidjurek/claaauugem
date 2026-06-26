@@ -11,6 +11,12 @@ func _ready() -> void:
 	if args.has("--owbattle"):
 		_owbattle(args)
 		return
+	if args.has("--menu"):
+		_menu_shot(args)
+		return
+	if args.has("--shop"):
+		_shop_shot(args)
+		return
 	var d := args.find("--dialogue")
 	if d != -1 and d + 2 < args.size():
 		_show_dialogue_then_shot(args[d + 1], args[d + 2], args)
@@ -61,6 +67,26 @@ func _finish_smoke(args: PackedStringArray, ok: bool) -> void:
 		await _capture_after(args[i + 1], 0.3)
 	else:
 		get_tree().quit(0 if ok else 1)
+
+func _shop_shot(args: PackedStringArray) -> void:
+	await get_tree().create_timer(0.7).timeout
+	GameState.money = 85
+	var shop = load("res://scenes/ui/Shop.tscn").instantiate()
+	shop.stock = ["soda", "fries", "burger", "battery", "bandage", "cola"]
+	get_tree().current_scene.add_child(shop)
+	var i := args.find("--shot")
+	if i != -1 and i + 1 < args.size():
+		await _capture_after(args[i + 1], 0.4)
+
+func _menu_shot(args: PackedStringArray) -> void:
+	await get_tree().create_timer(0.7).timeout
+	GameState.party = ["pidge"]
+	GameState.inventory = ["soda", "soda", "burger", "battery"]
+	var pm = load("res://scenes/ui/PauseMenu.tscn").instantiate()
+	get_tree().current_scene.add_child(pm)
+	var i := args.find("--shot")
+	if i != -1 and i + 1 < args.size():
+		await _capture_after(args[i + 1], 0.4)
 
 func _owbattle(args: PackedStringArray) -> void:
 	await get_tree().create_timer(0.6).timeout

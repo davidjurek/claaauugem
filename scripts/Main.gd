@@ -5,6 +5,7 @@ extends Node
 const PLAYER_SCENE := preload("res://scenes/world/Player.tscn")
 const TOUCH_SCENE := preload("res://scenes/ui/TouchControls.tscn")
 const BATTLE_SCENE := preload("res://scenes/battle/Battle.tscn")
+const PAUSE_SCENE := preload("res://scenes/ui/PauseMenu.tscn")
 
 @export var start_world: PackedScene = preload("res://scenes/world/TownSquare.tscn")
 
@@ -19,6 +20,14 @@ func _ready() -> void:
 	change_world(scene, GameState.current_spawn)
 	touch = TOUCH_SCENE.instantiate()
 	add_child(touch)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("menu") and not in_battle:
+		if get_tree().get_first_node_in_group("battle") != null:
+			return
+		if player and not player.can_move:
+			return
+		add_child(PAUSE_SCENE.instantiate())
 
 func change_world(scene: PackedScene, spawn := "default") -> void:
 	if world and is_instance_valid(world):

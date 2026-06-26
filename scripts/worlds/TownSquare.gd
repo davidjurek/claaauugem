@@ -61,6 +61,14 @@ func build_map() -> void:
 	_npc(4, "kid", 30, 23, "left")
 	var phone := SAVE_SCENE.instantiate()
 	add_actor(phone, 18, 18)
+	# shopkeeper in front of the drugstore
+	var shop := NPC_SCENE.instantiate()
+	shop.character_index = 0
+	shop.dialogue_path = TOWN_DLG
+	shop.dialogue_title = "shop"
+	shop.facing = "down"
+	shop.shop_stock = ["soda", "fries", "burger", "battery", "bandage", "cola"]
+	add_actor(shop, 7, 12)
 
 	# a little path to the east park gate
 	fill(ground, 40, 17, 4, 2, Tiles.CONCRETE)
